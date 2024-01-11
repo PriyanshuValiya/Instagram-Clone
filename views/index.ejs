@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body class="body">
+
+  <div class="page">
+    <div class="nav-bar">
+        <h1 class="h1"><i>Instagram</i></h1><br>
+        <a class="h2" style="font-size: 1.7rem; margin-left: 80px; opacity: 0.8;" href="http://localhost:1221/insta/flash.bot">Chat With AI</a>
+        <ul class="ul">
+            <div class="li">
+            <li>Home</li><br>
+            <li>Search</li><br>
+            <li>Explore</li><br>
+            <li>Reels</li><br>
+            <li>Messages</li><br>
+            <li>Notifications</li><br>
+            <li>Create</li><br>
+            <li>Profile</li><br>
+            <li>Threads</li><br>
+            <li>More</li>
+            </div>
+        </ul>
+    </div>
+
+    <div class="main-page">
+       <div class="head">
+          <div class="dp"></div> 
+          <div class="info">
+            <div class="head1">
+            <h2 class="h2"> priyanshu_valiya</h2>
+             <button class="aibtn btn2">Following</button>
+             <button class="aibtn btn2">Message</button>
+            </div>
+            <div class="h3">
+             <h3>2 Posts</h3>
+             <h3>36 Followers</h3>
+             <h3>76 Following</h3>
+            </div>
+        </div>
+       </div>
+     <hr style="opacity: 0.4; width: 85%; text-align: center;"><br>  
+     <a href="http://localhost:1221/insta/addpost" style="color: white; font-size: 1.5rem; margin-left: 10px;">Create Post</a> 
+    
+     <div class="posts">
+         <div class="text">
+             <% for (post of posts) { %>
+               <div class="post">
+                <div class="img"></div>
+                 <h3 class="user" style="margin-left: 5px;">@<%= post.caption %></h3>
+                  <div class="imgfoot">
+                   <a class="h2" href="http://localhost:1221/insta/<%=post.id%>/detail">Detail</a> 
+                   <form method="post" action="/insta/<%=post.id%>?_method=DELETE">
+                     <button class="aibtn" style="width: 70px; height: 25px;">Delete</button>
+                   </form> 
+                  </div>          
+               </div>
+             <% } %>
+         </div>
+     </div>
+
+    </div>
+  </div>
+</body>
+</html>
